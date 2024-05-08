@@ -158,7 +158,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.result.setText(text)
         except Exception as e:
             self.result.setText(str(e))
-
+            print(e)
+            print(type(e))
+            if(type(e)==UnboundLocalError):
+                print("b")
+            if(str(e)=="'Symbol' object is not subscriptable"):
+                self.result.setText("请输入对应的变量名")
 
 
 if __name__ == '__main__':
